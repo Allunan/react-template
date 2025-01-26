@@ -1,7 +1,7 @@
-import React from "react"
+import type React from "react"
 
 const Index: React.FC = () => {
-  return <>Index</>
+  return <div className="">Index</div>
 }
 
 export default Index
