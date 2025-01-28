@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --spacing: 4px;
+}
+
 *,
 *::before,
 *::after {
