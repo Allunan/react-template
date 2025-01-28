@@ -1,30 +1,5 @@
-// import { grid } from "./grid"
-// import { base } from "./base"
-
-const grid = {
-  desktop: {
-    gap: 16,
-    columns: 12,
-    container: 1280
-  },
-  tablet: {
-    gap: 12,
-    columns: 8,
-    container: 768
-  },
-  phone: {
-    gap: 8,
-    columns: 4,
-    container: 280
-  }
-}
-
-const base = {
-  base: 4,
-  span:
-    (grid.desktop.container - grid.desktop.gap * (grid.desktop.columns - 1)) /
-    12
-}
+import { grid } from "./grid"
+import { base } from "./base"
 
 /**
  * Generates a record of gap classes for TailwindCSS based on the number of columns in the grid.
