@@ -86,16 +86,16 @@ export const maxHeight = () => {
  * This object can then be used to extend tailwinds `gap`.
  *
  * Example of usage:
- * <div className="gap-1" />
- * <div className="gap-x-5" />
- * <div className="gap-y-64" />
+ * <div className="gap-base-1" />
+ * <div className="gap-x-base-5" />
+ * <div className="gap-y-base-64" />
  *
  */
 export const gap = () => {
   const gap: Record<string, string> = {}
 
   for (let value = 1; value <= 64; value++) {
-    gap[`span-${value}`] = `${base.spacing * value}px`
+    gap[`base-${value}`] = `${base.spacing * value}px`
   }
 
   return gap
@@ -105,17 +105,17 @@ export const gap = () => {
  * This object can then be used to extend tailwinds `padding`.
  *
  * Example of usage:
- * <div className="p-span-5" />
- * <div className="px-span-8" />
- * <div className="pl-span-24" />
- * <div className="pe-span-56" />
+ * <div className="p-base-5" />
+ * <div className="px-base-8" />
+ * <div className="pl-base-24" />
+ * <div className="pe-base-56" />
  *
  */
 export const padding = () => {
   const padding: Record<string, string> = {}
 
   for (let value = 1; value <= 64; value++) {
-    padding[`span-${value}`] = `${base.spacing * value}px`
+    padding[`base-${value}`] = `${base.spacing * value}px`
   }
 
   return padding
@@ -125,17 +125,17 @@ export const padding = () => {
  * This object can then be used to extend tailwinds `margin`.
  *
  * Example of usage:
- * <div className="m-span-5" />
- * <div className="mx-span-8" />
- * <div className="ml-span-24" />
- * <div className="me-span-56" />
+ * <div className="m-base-5" />
+ * <div className="mx-base-8" />
+ * <div className="ml-base-24" />
+ * <div className="me-base-56" />
  *
  */
 export const margin = () => {
   const margin: Record<string, string> = {}
 
   for (let value = 1; value <= 64; value++) {
-    margin[`span-${value}`] = `${base.spacing * value}px`
+    margin[`base-${value}`] = `${base.spacing * value}px`
   }
 
   return margin
