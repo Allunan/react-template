@@ -1,109 +1,87 @@
-import { base, grid } from "./base"
+import { base } from "./base"
 
 /**
- * This object can then be used to extend tailwinds `width`.
- *
- * Example of usage:
- * <div className="w-span-5" />
- *
+ * Generate Tailwind width values based on a given screen type.
  */
 export const width = () => {
   const width: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    width[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    width[`span-w-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
 
   return width
 }
+
 /**
- * This object can then be used to extend tailwinds `minWidth`.
- *
- * Example of usage:
- * <div className="min-w-span-5" />
- *
+ * Generate Tailwind min-width values based on CSS variables.
  */
 export const minWidth = () => {
-  const height: Record<string, string> = {}
+  const minWidth: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    height[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    minWidth[`span-min-w-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
 
-  return height
+  return minWidth
 }
+
 /**
- * This object can then be used to extend tailwinds `maxWidth`.
- *
- * Example of usage:
- * <div className="max-w-span-5" />
- *
+ * Generate Tailwind max-width values based on CSS variables.
  */
 export const maxWidth = () => {
-  const height: Record<string, string> = {}
+  const maxWidth: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    height[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    maxWidth[`span-max-w-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
 
-  return height
+  return maxWidth
 }
 
 /**
- * This object can then be used to extend tailwinds `height`.
- *
- * Example of usage:
- * <div className="h-span-5" />
- *
+ * Generate Tailwind height values based on CSS variables.
  */
 export const height = () => {
   const height: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    height[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    height[`span-h-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
 
   return height
 }
+
 /**
- * This object can then be used to extend tailwinds `minHeight`.
- *
- * Example of usage:
- * <div className="min-h-span-5" />
- *
+ * Generate Tailwind min-height values based on CSS variables.
  */
 export const minHeight = () => {
-  const height: Record<string, string> = {}
+  const minHeight: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    height[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    minHeight[`span-min-h-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
 
-  return height
+  return minHeight
 }
+
 /**
- * This object can then be used to extend tailwinds `maxHeight`.
- *
- * Example of usage:
- * <div className="max-h-span-5" />
- *
+ * Generate Tailwind max-height values based on CSS variables.
  */
 export const maxHeight = () => {
-  const height: Record<string, string> = {}
+  const maxHeight: Record<string, string> = {}
 
-  for (let value = 1; value <= grid.desktop.columns; value++) {
-    height[`span-${value}`] =
-      `${value * base.span + (value - 1) * grid.desktop.gap}px`
+  for (let value = 1; value <= 12; value++) {
+    maxHeight[`span-max-h-${value}`] =
+      `calc(${value} * ${base.span} + (${value} - 1) * var(--grid-gap))`
   }
-
-  return height
+  return maxHeight
 }
-
 /**
  * This object can then be used to extend tailwinds `gap`.
  *
