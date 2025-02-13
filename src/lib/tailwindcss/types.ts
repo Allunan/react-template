@@ -12,7 +12,7 @@ export interface GridVars {
     columns: number
     margin: number
   }
-	
+
   phone: {
     gutter: number
     columns: number
