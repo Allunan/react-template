@@ -1,44 +1,51 @@
-export const grid = {
+import type { GridVars } from "./types"
+
+export const grid: GridVars = {
+  maxWidth: 1280,
   desktop: {
-    gap: 16,
+    gutter: 16,
     columns: 12,
-    container: 1280
+    margin: 1280
   },
   tablet: {
-    gap: 12,
+    gutter: 12,
     columns: 8,
-    container: 768
+    margin: 768
   },
   phone: {
-    gap: 8,
+    gutter: 8,
     columns: 4,
-    container: 280
+    margin: 280
   }
 }
 
 export const tailwindCSSVars = {
   ":root": {
-    "--grid-columns": `${grid.phone.columns}`, // Default: Mobile-first
-    "--grid-gap": `${grid.phone.gap}px`,
-    "--grid-container": `${grid.phone.container}px`
+    // Default: Mobile
+    "--grid-columns": `${grid.phone.columns}`,
+    "--grid-gutter": `${grid.phone.gutter}px`,
+    "--grid-margin": `${grid.phone.margin}px`,
+    "--grid-max-width": `${grid.maxWidth}px`
   },
-  "@media (min-width: 768px)": {
+  "@media (min-width: 540px)": {
+    // Tablet
     ":root": {
-      "--grid-columns": `${grid.tablet.columns}`, // Tablet styles
-      "--grid-gap": `${grid.tablet.gap}px`,
-      "--grid-container": `${grid.tablet.container}px`
+      "--grid-columns": `${grid.tablet.columns}`,
+      "--grid-gutter": `${grid.tablet.gutter}px`,
+      "--grid-margin": `${grid.tablet.margin}px`
     }
   },
-  "@media (min-width: 1280px)": {
+  "@media (min-width: 1024px)": {
+    // Desktop
     ":root": {
-      "--grid-columns": `${grid.desktop.columns}`, // Desktop styles
-      "--grid-gap": `${grid.desktop.gap}px`,
-      "--grid-container": `${grid.desktop.container}px`
+      "--grid-columns": `${grid.desktop.columns}`,
+      "--grid-gutter": `${grid.desktop.gutter}px`,
+      "--grid-margin": `${grid.desktop.margin}px`
     }
   }
 }
 
 export const base = {
   spacing: 4,
-  span: "((var(--grid-container) - var(--grid-gap) * (var(--grid-columns) - 1)) / var(--grid-columns))"
+  span: "((calc(min(100dvw, var(--grid-max-width)) - (var(--grid-margin) * 2)) - (var(--grid-gutter) * (var(--grid-columns) - 1))) / var(--grid-columns))"
 }
